@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <meta name="description" content="Join the Malaysia biggest Raya festival happening in Brunei. Secure your premium booth at BRIDEX today and maximize your brand exposure for Absolut Bazaar x Gaya Raya 2026.">
+    <meta name="keywords" content="Absolut Bazaar, Gaya Raya 2026, Brunei Events, BRIDEX, Booth Booking, Expo Brunei">
+    <meta name="author" content="Absolut Bazaar">
+    
+    <meta property="og:title" content="Brunei 2026 ABGR Booking">
+    <meta property="og:description" content="Join MaLaysia biggest Raya festival happening in Brunei. Secure your premium booth at BRIDEX today.">
+    <meta property="og:image" content="https://i.imgur.com/MmHrwvv.jpeg">
+    <meta property="og:url" content="https://booking.absolutbazaar.com">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#FFFBEB">
+
+    <title>Brunei 2026 ABGR Booking</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/bEd62zX.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        :root {
+            /* THEME VARIABLES */
+            --bg-color: #FFFBEB; 
+            --text-main: #422006; 
+            --text-primary: #b45309; 
+            --text-accent: #f59e0b; 
+            --shadow-light: #ffffff;
+            --shadow-dark: #e7e5e4; 
+
+            /* LEGEND PRICES */
+            --col-corner: #FFD166;
+            --col-intermediate: #808080;
+            --col-fnb-corner: #90EE90;
+            --col-fnb-intermediate: #D3D3D3;
+            --col-sold: #FFB6C1;
+            --col-sold-stroke: #FF6600;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color); 
+            color: var(--text-main);
+            overflow-x: hidden;
+            overscroll-behavior-y: none;
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23b45309' stroke='white' stroke-width='2'%3E%3Cpath d='M2 2l7.5 19.5 3.5-8.5 8.5-3.5z'/%3E%3C/svg%3E"), auto !important;
+        }
+
+        /* NEUMORPHISM STYLE */
+        .neu-panel { 
+            background: var(--bg-color);
+            border-radius: 20px;
+            box-shadow: 10px 10px 20px var(--shadow-dark), -10px -10px 20px var(--shadow-light); 
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+        .neu-pressed { 
+            background: var(--bg-color);
+            box-shadow: inset 6px 6px 10px var(--shadow-dark), inset -6px -6px 10px var(--shadow-light); 
+            border-radius: 15px;
+        }
+        .neu-btn { 
+            background: var(--bg-color); border: none; border-radius: 12px; color: var(--text-primary);
+            box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light); 
+            transition: all 0.2s ease;
+        }
+        .neu-btn:hover { transform: translateY(-2px); }
+        .neu-btn:active { box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); transform: translateY(0); }
+        
+        .neu-btn-primary { 
+            background: linear-gradient(135deg, #d97706, #b45309); color: white; border-radius: 12px; border: none; 
+            box-shadow: 6px 6px 12px #d6d3d1, -6px -6px 12px #ffffff; transition: all 0.2s ease;
+        }
+        .neu-btn-primary:hover { transform: translateY(-2px); background: linear-gradient(135deg, #b45309, #92400e); }
+        
+        .neu-circle { 
+            width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; background: var(--bg-color); color: var(--text-primary);
+            box-shadow: 5px 5px 10px var(--shadow-dark), -5px -5px 10px var(--shadow-light);
+        }
+        .neu-input { 
+            background: var(--bg-color); border: none; border-radius: 8px;
+            box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); 
+            padding: 12px; outline: none; width: 100%;
+        }
+        .neu-modal-overlay { background: rgba(255, 251, 235, 0.7); backdrop-filter: blur(8px); }
+        .logo-container { 
+            background: linear-gradient(145deg, #f59e0b, #d97706); border-radius: 50%; padding: 8px;
+            box-shadow: 5px 5px 10px var(--shadow-dark), -5px -5px 10px var(--shadow-light); 
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        /* MARQUEE */
+        .marquee-wrapper { overflow: hidden; white-space: nowrap; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+        .marquee-track { display: flex; width: max-content; gap: 3rem; animation: scroll 15s linear infinite; }
+        .marquee-track:hover { animation-play-state: paused; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* PARTNER LOGO */
+        .partner-logo { 
+            height: 60px; width: 120px; 
+            background: #B1D6A0; /* GREEN FILL */
+            border-radius: 10px; display: flex; align-items: center; justify-content: center; 
+            box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light); 
+            opacity: 1; flex-shrink: 0; overflow: hidden; padding: 0;
+        }
+        .partner-logo img { width: 100%; height: 100%; object-fit: contain; }
+
+        /* ANNOUNCER TEXT */
+        .announcer-container {
+            background: linear-gradient(to right, #b45309, #d97706);
+            color: white; padding: 6px 0; overflow: hidden; 
+            border-top: 1px solid #fcd34d; border-bottom: 1px solid #fcd34d;
+            display: flex;
+        }
+        .announcer-track {
+            display: flex; gap: 4rem; 
+            animation: announcerScroll 25s linear infinite;
+            white-space: nowrap;
+            font-size: 11px; font-weight: 600; letter-spacing: 1px;
+            padding-left: 0; 
+        }
+        @keyframes announcerScroll { 
+            0% { transform: translateX(0); } 
+            100% { transform: translateX(-50%); } 
+        }
+
+        /* BOOTH STYLES */
+        .booth { cursor: pointer; stroke: #000; stroke-width: 1px; fill: #FFFFFF; transition: all 0.2s; }
+        .booth:hover { stroke: #d97706 !important; stroke-width: 4px !important; z-index: 100; }
+        
+        .booth.price-5950, .booth.price-5950 rect { fill: var(--col-corner) !important; } 
+        .booth.price-5100, .booth.price-5100 rect { fill: var(--col-intermediate) !important; } 
+        .booth.price-3400, .booth.price-3400 rect { fill: var(--col-fnb-corner) !important; } 
+        .booth.price-2890, .booth.price-2890 rect { fill: var(--col-fnb-intermediate) !important; } 
+
+        .booth.sold, .booth.reserved, .booth.prebooked {
+            fill: var(--col-sold) !important; stroke: var(--col-sold-stroke) !important; stroke-width: 3 !important; stroke-dasharray: 8,4 !important; pointer-events: all !important; opacity: 1 !important;
+        }
+        .booth.selected { 
+            fill: #007BFF !important; stroke: white !important; stroke-width: 3px !important;
+            filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.6)); animation: selectedGlow 2s ease-in-out infinite;
+        }
+        
+        /* SEARCH HIGHLIGHT ANIMATION */
+        .booth.searched { 
+            fill: #007BFF !important; 
+            stroke: white !important; 
+            stroke-width: 3px !important; 
+            animation: attentionSeeker 0.8s ease-in-out infinite !important; 
+            z-index: 50 !important; 
+        }
+
+        @keyframes attentionSeeker { 
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px #007BFF); } 
+            50% { transform: scale(1.2); filter: drop-shadow(0 0 20px #007BFF); } 
+        }
+        @keyframes selectedGlow { 0% { filter: drop-shadow(0 0 5px #007BFF); } 50% { filter: drop-shadow(0 0 15px #007BFF); } 100% { filter: drop-shadow(0 0 5px #007BFF); } }
+
+        /* TOOLTIP */
+        .tooltip { 
+            position: fixed; z-index: 100; background: rgba(26, 26, 26, 0.95);
+            color: white; padding: 12px; border-radius: 12px; font-size: 12px; pointer-events: none; 
+            border: 1px solid #f59e0b; transform: translate(-50%, -110%); box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        .notification-toast { 
+            position: fixed; top: 90px; right: 20px; z-index: 200; background: #FFFBEB; 
+            border-radius: 16px; padding: 16px 24px; box-shadow: 8px 8px 16px #e7e5e4, -8px -8px 16px #ffffff; 
+            border: 1px solid rgba(255,255,255,0.5); display: flex; align-items: center; gap: 15px;
+            transform: translateX(150%); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); max-width: 350px;
+        }
+        .notification-toast.show { transform: translateX(0); }
+        .neu-icon-btn { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--bg-color); box-shadow: 5px 5px 10px #e7e5e4, -5px -5px 10px #ffffff; color: #b45309; text-decoration: none; transition: all 0.2s; }
+
+        [x-cloak] { display: none !important; }
+        .animate-fade-in-up { animation: modalSlideIn 0.3s ease-out; }
+        @keyframes modalSlideIn { from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); } to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
+    </style>
+</head>
+
+<body x-data="boothSystem()" x-init="initSystem()" class="min-h-screen flex flex-col">
+
+    <div :class="notification.visible ? 'show' : ''" class="notification-toast">
+        <div class="neu-circle w-10 h-10 flex-shrink-0 text-yellow-600"><i :class="notification.icon"></i></div>
+        <div>
+            <div class="font-bold text-yellow-800 text-sm uppercase tracking-wide" x-text="notification.title"></div>
+            <div class="text-xs text-gray-600 font-medium" x-text="notification.message"></div>
+        </div>
+    </div>
+
+    <div x-show="modals.welcome" x-cloak class="fixed inset-0 neu-modal-overlay z-[60] flex items-center justify-center p-4" style="display: flex !important;">
+        <div class="neu-panel max-w-lg w-full p-8 relative animate-fade-in-up bg-white max-h-[90vh] overflow-y-auto">
+            <div class="text-center mb-6">
+                <div class="inline-block p-4 rounded-2xl bg-gradient-to-br from-yellow-500 to-yellow-700 shadow-xl mb-4 transform hover:scale-105 transition">
+                    <img src="https://i.imgur.com/uikzokX.png" alt="Absolut Bazaar" class="h-12 w-auto brightness-0 invert">
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800">Welcome to</h2>
+                <p class="text-yellow-600 font-medium text-sm mt-1">Absolut Bazaar x Gaya Raya 2026</p>
+                <p class="text-gray-600 text-sm mt-2">BRIDEX, BRUNEI • 27 FEB - 1 MAR 2026</p>
+            </div>
+            <div class="space-y-4 mb-8">
+                <div class="flex items-center gap-4">
+                    <div class="neu-circle w-10 h-10 flex-shrink-0 font-bold text-sm">1</div>
+                    <div class="text-sm text-gray-700"><strong>Zoom & Pan</strong> to explore floor plan.</div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="neu-circle w-10 h-10 flex-shrink-0 font-bold text-sm">2</div>
+                    <div class="text-sm text-gray-700">Click <strong>Available Booths</strong> to select (max 2).</div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="neu-circle w-10 h-10 flex-shrink-0 font-bold text-sm">3</div>
+                    <div class="text-sm text-gray-700"><strong>50% Deposit</strong> is required to confirm your booking.</div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="neu-circle w-10 h-10 flex-shrink-0 font-bold text-sm">4</div>
+                    <div class="text-sm text-gray-700 pt-2">For Non-Brunei Citizens: Professional visa required ($25 BND) and must be obtained before event.</div>
+                </div>
+            </div>
+            <button @click="modals.welcome = false" class="w-full py-4 neu-btn-primary font-bold text-lg shadow-lg">I Understand</button>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-40 py-3 bg-[#FFFBEB] shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="logo-container mr-3"><img src="https://i.imgur.com/uikzokX.png" alt="Logo" class="h-8 w-auto brightness-0 invert"></div>
+                <div>
+                    <h1 class="text-lg font-bold leading-tight text-yellow-800">Absolut Bazaar x Gaya Raya 2026</h1>
+                    <p class="text-gray-500 text-xs font-semibold">
+                        <a href="https://maps.app.goo.gl/BThqpLNV1SFvAeDa7" target="_blank" class="hover:text-yellow-600 hover:underline transition-colors flex items-center gap-1">
+                            BRIDEX, BRUNEI • 27 FEB - 1 MAR 2026
+                        </a>
+                    </p>
+                    <div class="flex items-center gap-3 mt-0.5">
+                        <a href="https://drive.google.com/uc?export=download&id=1JYmCq3AOruaM4R4tUCrfvN2yFeOSLCVF" class="text-yellow-600 text-[10px] font-bold hover:underline hover:text-yellow-800 flex items-center gap-1">
+                            <i class="fas fa-download"></i> Floor Plan
+                        </a>
+                        <button @click="modals.welcome = true" class="text-yellow-600 text-[10px] font-bold hover:underline hover:text-yellow-800 flex items-center gap-1 border-l border-yellow-400 pl-3">
+                            <i class="fas fa-question-circle"></i> HELP
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div x-show="selectedBooths.length > 0" x-transition class="neu-pressed px-4 py-2 rounded-full text-xs font-bold flex items-center text-yellow-700">
+                <span x-text="selectedBooths.length + '/2 Selected'"></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl mx-auto w-full px-4 py-2 mt-2">
+
+        <section class="mb-6">
+            <h3 class="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Official Partners</h3>
+            <div class="neu-pressed py-6 px-0 mx-2 overflow-hidden bg-white/30">
+                <div class="marquee-wrapper">
+                    <div class="marquee-track">
+                        <div class="partner-logo">
+                            <img src="https://i.imgur.com/thhcuCt.jpeg" alt="Partner">
+                        </div>
+                        <div class="partner-logo text-[10px] font-bold text-yellow-700 text-center leading-tight bg-[#FEF3C7]"><div class="p-2">COMING<br>SOON</div></div>
+                        <div class="partner-logo text-[10px] font-bold text-yellow-700 text-center leading-tight bg-[#FEF3C7]"><div class="p-2">COMING<br>SOON</div></div>
+                        <div class="partner-logo text-[10px] font-bold text-yellow-700 text-center leading-tight bg-[#FEF3C7]"><div class="p-2">COMING<br>SOON</div></div>
+                        <div class="partner-logo">
+                            <img src="https://i.imgur.com/thhcuCt.jpeg" alt="Partner">
+                        </div>
+                        <div class="partner-logo text-[10px] font-bold text-yellow-700 text-center leading-tight bg-[#FEF3C7]"><div class="p-2">COMING<br>SOON</div></div>
+
+                        <div class="partner-logo">
+                            <img src="https://i.imgur.com/thhcuCt.jpeg" alt="Partner">
+                        </div>
+                        <div class="partner-logo text-[10px] font-bold text-yellow-700 text-center leading-tight bg-[#FEF3C7]"><div class="p-2">COMING<br>SOON</div></div>
+                        <div class="partner-logo text-[10px] font-bold text-yellow-700 text-center leading-tight bg-[#FEF3C7]"><div class="p-2">COMING<br>SOON</div></div>
+                        <div class="partner-logo text-[10px] font-bold text-yellow-700 text-center leading-tight bg-[#FEF3C7]"><div class="p-2">COMING<br>SOON</div></div>
+                        <div class="partner-logo">
+                            <img src="https://i.imgur.com/thhcuCt.jpeg" alt="Partner">
+                        </div>
+                        <div class="partner-logo text-[10px] font-bold text-yellow-700 text-center leading-tight bg-[#FEF3C7]"><div class="p-2">COMING<br>SOON</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="mb-4 flex flex-col items-center">
+            <button @click="showLegend = !showLegend" class="text-xs font-bold text-yellow-700 hover:text-yellow-900 flex items-center gap-2 transition-colors bg-yellow-100 px-4 py-2 rounded-full shadow-sm">
+                <span x-text="showLegend ? 'Hide Legend' : 'Show Legend'"></span>
+                <i class="fas fa-chevron-down transition-transform duration-300" :class="showLegend ? 'rotate-180' : ''"></i>
+            </button>
+            <div x-show="showLegend" x-transition class="mt-4 flex justify-center gap-4 text-xs flex-wrap bg-yellow-50/50 p-4 rounded-xl border border-yellow-100 w-full">
+                <div class="flex items-center"><span class="w-3 h-3 rounded-full mr-2" style="background-color: var(--col-sold); border: 2px dashed var(--col-sold-stroke);"></span> Sold/Reserved</div>
+                <div class="flex items-center"><span class="w-3 h-3 rounded-full mr-2" style="background-color: #007BFF;"></span> Selected</div>
+                <div class="flex items-center"><span class="w-3 h-3 rounded-full mr-2" style="background-color: var(--col-corner);"></span> Corner RM 5,950</div>
+                <div class="flex items-center"><span class="w-3 h-3 rounded-full mr-2" style="background-color: var(--col-intermediate);"></span> Intermediate RM 5,100</div>
+                <div class="flex items-center"><span class="w-3 h-3 rounded-full mr-2" style="background-color: var(--col-fnb-corner);"></span> F&B Corner RM 3,400</div>
+                <div class="flex items-center"><span class="w-3 h-3 rounded-full mr-2" style="background-color: var(--col-fnb-intermediate);"></span> F&B Intermediate RM 2,890</div>
+            </div>
+        </div>
+
+        <div class="neu-panel p-2 relative h-[50vh] md:h-[600px] overflow-hidden mb-0 bg-white touch-none">
+            <div x-show="loading" class="absolute top-2 right-2 z-30 bg-white/80 px-3 py-1 rounded-full text-xs font-bold text-yellow-600 shadow flex items-center gap-2">
+                <i class="fas fa-circle-notch fa-spin"></i> Syncing...
+            </div>
+            <div class="absolute top-4 left-4 z-20 pointer-events-none">
+                <span class="neu-pressed px-3 py-1 text-xs font-bold text-yellow-600 uppercase tracking-wider">Floor Plan</span>
+            </div>
+            
+            <div class="absolute top-4 right-4 z-20 flex flex-col gap-3">
+                <button @click="zoomIn()" class="neu-circle"><i class="fas fa-plus"></i></button>
+                <button @click="zoomOut()" class="neu-circle"><i class="fas fa-minus"></i></button>
+                <button @click="resetZoom()" class="neu-circle"><i class="fas fa-compress"></i></button>
+            </div>
+
+            <div x-ref="floorplanContainer" @touchstart="handleTouchStart" @touchmove="handleTouchMove" @touchend="handleTouchEnd" @mousedown="startDrag" class="w-full h-full origin-top-left cursor-move" style="transform-origin: 0 0;">
+                
+                <svg id="booths-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 891.52 704.41" width="100%" height="100%">
+                    <style>
+                        text{font-family:sans-serif;font-size:6px;fill:#000}
+                        .booth text{pointer-events:none}
+                        .booth { fill: #E0E0E0; stroke: #000; stroke-width: 0.72px; cursor: pointer; }
+                    </style>
+                    <image href="https://i.imgur.com/f6UFCfe.jpeg" x="0" y="0" width="891.52" height="704.41" preserveAspectRatio="xMidYMid meet" />
+                    
+                     <path id="booth112" class="booth" data-booth-number="112" d="M551.62 279.48h13.98v14.04h-13.98z" transform="rotate(30.53 558.691 286.57)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 553.97 285.82)"><tspan x="0" y="0">112</tspan></text>
+    
+    <path id="booth113" class="booth" data-booth-number="113" d="M537.07 303.6h13.98v14.04h-13.98z" transform="rotate(30.53 544.13 310.683)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 539.42 309.94)"><tspan x="0" y="0">113</tspan></text>
+    
+    <path id="booth114" class="booth" data-booth-number="114" d="M549.27 310.8h13.98v14.04h-13.98z" transform="rotate(30.53 556.331 317.885)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 551.62 317.14)"><tspan x="0" y="0">114</tspan></text>
+    
+    <path id="booth115" class="booth" data-booth-number="115" d="M529.99 315.61h13.98v14.04h-13.98z" transform="rotate(30.53 537.034 322.698)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 532.34 321.95)"><tspan x="0" y="0">115</tspan></text>
+    
+    <path id="booth116" class="booth" data-booth-number="116" d="M542.19 322.81h13.98v14.04h-13.98z" transform="rotate(30.53 549.255 329.895)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 544.54 329.15)"><tspan x="0" y="0">116</tspan></text>
+    
+    <path id="booth117" class="booth" data-booth-number="117" d="M515.07 339.63h13.98v14.04h-13.98z" transform="rotate(30.53 522.135 346.726)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 517.42 345.97)"><tspan x="0" y="0">117</tspan></text>
+    
+    <path id="booth118" class="booth" data-booth-number="118" d="M527.28 346.83h13.98v14.04h-13.98z" transform="rotate(30.53 534.337 353.927)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 529.63 353.17)"><tspan x="0" y="0">118</tspan></text>
+    
+    <path id="booth119" class="booth" data-booth-number="119" d="M507.99 351.64h13.98v14.04h-13.98z" transform="rotate(30.53 515.04 358.74)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 510.34 357.98)"><tspan x="0" y="0">119</tspan></text>
+    
+    <path id="booth120" class="booth" data-booth-number="120" d="M520.19 358.84h13.98v14.04h-13.98z" transform="rotate(30.53 527.241 365.943)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 522.54 365.18)"><tspan x="0" y="0">120</tspan></text>
+
+    <path id="booth1" class="booth" data-booth-number="1" d="M214.6 240.33h13.98v14.04H214.6z" transform="rotate(11.83 221.514 247.283)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1090.365 1185.312) scale(.93 1)"><tspan x="0" y="0">1</tspan></text>
+
+    <path id="booth2" class="booth" data-booth-number="2" d="M228.36 243.28h13.98v14.04h-13.98z" transform="rotate(11.83 235.279 250.198)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1097.722 1253.194) scale(.93 1)"><tspan x="0" y="0">2</tspan></text>
+
+    <path id="booth3" class="booth" data-booth-number="3" d="M217.5 226.49h13.98v14.04H217.5z" transform="rotate(11.83 224.42 233.421)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1022.128 1192.34) scale(.93 1)"><tspan x="0" y="0">3</tspan></text>
+
+    <path id="booth4" class="booth" data-booth-number="4" d="M231.28 229.37h13.98v14.04h-13.98z" transform="rotate(11.83 238.184 236.337)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1029.137 1260.282) scale(.93 1)"><tspan x="0" y="0">4</tspan></text>
+
+    <path id="booth5" class="booth" data-booth-number="5" d="M222.88 199.07h13.98v14.04h-13.98z" transform="rotate(11.83 229.825 206.033)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -887.103 1204.642) scale(.93 1)"><tspan x="0" y="0">5</tspan></text>
+
+    <path id="booth6" class="booth" data-booth-number="6" d="M236.57 201.93h13.98v14.04h-13.98z" transform="rotate(11.83 243.483 208.862)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -894.065 1272.092) scale(.93 1)"><tspan x="0" y="0">6</tspan></text>
+
+    <path id="booth7" class="booth" data-booth-number="7" d="M225.74 185.24h13.98v14.04h-13.98z" transform="rotate(11.83 232.682 192.177)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -818.933 1211.481) scale(.93 1)"><tspan x="0" y="0">7</tspan></text>
+
+    <path id="booth8" class="booth" data-booth-number="8" d="M239.46 188.11h13.98v14.04h-13.98z" transform="rotate(11.83 246.394 195.049)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -825.924 1279.13) scale(.93 1)"><tspan x="0" y="0">8</tspan></text>
+
+    <path id="booth9" class="booth" data-booth-number="9" d="M231.34 157.95h13.98v14.04h-13.98z" transform="rotate(11.83 238.248 164.918)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -684.382 1224.857) scale(.93 1)"><tspan x="0" y="0">9</tspan></text>
+
+    <path id="booth10" class="booth" data-booth-number="10" d="M245.02 160.81H259v14.04h-13.98z" transform="rotate(11.83 251.96 167.79)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -692.093 1285.556) scale(.93 1)"><tspan x="0" y="0">10</tspan></text>
+
+    <path id="booth11" class="booth" data-booth-number="11" d="M234.23 144.12h13.98v14.04h-13.98z" transform="rotate(11.83 241.158 151.105)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -616.942 1225.138) scale(.93 1)"><tspan x="0" y="0">11</tspan></text>
+
+    <path id="booth12" class="booth" data-booth-number="12" d="M247.92 146.99h13.98v14.04h-13.98z" transform="rotate(11.83 254.816 153.934)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -623.952 1292.593) scale(.93 1)"><tspan x="0" y="0">12</tspan></text>
+
+    <path id="booth13" class="booth" data-booth-number="13" d="M275.25 152.74h13.98v14.04h-13.98z" transform="rotate(11.83 282.143 159.688)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -638.032 1427.412) scale(.93 1)"><tspan x="0" y="0">13</tspan></text>
+
+    <path id="booth14" class="booth" data-booth-number="14" d="M288.92 155.6h13.98v14.04h-13.98z" transform="rotate(11.83 295.806 162.565)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -645 1494.814) scale(.93 1)"><tspan x="0" y="0">14</tspan></text>
+
+    <path id="booth15" class="booth" data-booth-number="15" d="M302.62 158.52h13.98v14.04h-13.98z" transform="rotate(11.83 309.523 165.485)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -652.247 1562.343) scale(.93 1)"><tspan x="0" y="0">15</tspan></text>
+
+    <path id="booth16" class="booth" data-booth-number="16" d="M316.41 161.41h13.98v14.04h-13.98z" transform="rotate(11.83 323.283 168.352)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -659.25 1630.334) scale(.93 1)"><tspan x="0" y="0">16</tspan></text>
+
+    <path id="booth17" class="booth" data-booth-number="17" d="M313.5 175.27h13.98v14.04H313.5z" transform="rotate(11.83 320.378 182.213)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -727.643 1623.225) scale(.93 1)"><tspan x="0" y="0">17</tspan></text>
+
+    <path id="booth18" class="booth" data-booth-number="18" d="M299.53 172.35h13.98v14.04h-13.98z" transform="rotate(11.83 306.42 179.318)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -720.482 1554.388) scale(.93 1)"><tspan x="0" y="0">18</tspan></text>
+
+    <path id="booth19" class="booth" data-booth-number="19" d="M285.93 169.5h13.98v14.04h-13.98z" transform="rotate(11.83 292.853 176.431)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -713.577 1487.334) scale(.93 1)"><tspan x="0" y="0">19</tspan></text>
+
+    <path id="booth20" class="booth" data-booth-number="20" d="M272.35 166.6h13.98v14.04h-13.98z" transform="rotate(11.83 279.238 173.549)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -706.323 1420.342) scale(.93 1)"><tspan x="0" y="0">20</tspan></text>
+
+    <path id="booth21" class="booth" data-booth-number="21" d="M267.15 193.66h13.98v14.04h-13.98z" transform="rotate(11.83 274.043 200.623)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -839.564 1408.781) scale(.93 1)"><tspan x="0" y="0">21</tspan></text>
+
+    <path id="booth22" class="booth" data-booth-number="22" d="M280.86 196.53h13.98v14.04h-13.98z" transform="rotate(11.83 287.755 203.495)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -846.56 1476.381) scale(.93 1)"><tspan x="0" y="0">22</tspan></text>
+
+    <path id="booth23" class="booth" data-booth-number="23" d="M294.51 199.39h13.98v14.04h-13.98z" transform="rotate(11.83 301.413 206.323)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -853.494 1543.633) scale(.93 1)"><tspan x="0" y="0">23</tspan></text>
+
+    <path id="booth24" class="booth" data-booth-number="24" d="M308.34 202.28h13.98v14.04h-13.98z" transform="rotate(11.83 315.226 209.233)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -860.57 1611.876) scale(.93 1)"><tspan x="0" y="0">24</tspan></text>
+
+    <path id="booth25" class="booth" data-booth-number="25" d="M305.41 216.16h13.98v14.04h-13.98z" transform="rotate(11.83 312.321 223.095)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -928.971 1604.67) scale(.93 1)"><tspan x="0" y="0">25</tspan></text>
+
+    <path id="booth26" class="booth" data-booth-number="26" d="M291.65 213.27h13.98v14.04h-13.98z" transform="rotate(11.83 298.561 220.228)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -921.957 1536.776) scale(.93 1)"><tspan x="0" y="0">26</tspan></text>
+
+    <path id="booth27" class="booth" data-booth-number="27" d="M277.96 210.41h13.98v14.04h-13.98z" transform="rotate(11.83 284.85 217.356)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -914.995 1469.326) scale(.93 1)"><tspan x="0" y="0">27</tspan></text>
+
+    <path id="booth28" class="booth" data-booth-number="28" d="M264.3 207.55h13.98v14.04H264.3z" transform="rotate(11.83 271.186 214.48)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -907.974 1401.967) scale(.93 1)"><tspan x="0" y="0">28</tspan></text>
+
+    <path id="booth29" class="booth" data-booth-number="29" d="M258.57 234.72h13.98v14.04h-13.98z" transform="rotate(11.83 265.466 241.656)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1041.963 1387.899) scale(.93 1)"><tspan x="0" y="0">29</tspan></text>
+
+    <path id="booth30" class="booth" data-booth-number="30" d="M272.24 237.58h13.98v14.04h-13.98z" transform="rotate(11.83 279.177 244.528)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1048.979 1455.306) scale(.93 1)"><tspan x="0" y="0">30</tspan></text>
+
+    <path id="booth31" class="booth" data-booth-number="31" d="M285.97 240.45h13.98v14.04h-13.98z" transform="rotate(11.83 292.889 247.4)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1055.964 1523.002) scale(.93 1)"><tspan x="0" y="0">31</tspan></text>
+
+    <path id="booth32" class="booth" data-booth-number="32" d="M299.72 243.33h13.98v14.04h-13.98z" transform="rotate(11.83 306.649 250.267)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1062.988 1590.8) scale(.93 1)"><tspan x="0" y="0">32</tspan></text>
+
+    <path id="booth33" class="booth" data-booth-number="33" d="M296.83 257.33h13.98v14.04h-13.98z" transform="rotate(11.83 303.759 264.273)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1131.998 1583.853) scale(.93 1)"><tspan x="0" y="0">33</tspan></text>
+
+    <path id="booth34" class="booth" data-booth-number="34" d="M283.07 254.45h13.98v14.04h-13.98z" transform="rotate(11.83 289.994 261.358)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1124.979 1516.007) scale(.93 1)"><tspan x="0" y="0">34</tspan></text>
+
+    <path id="booth35" class="booth" data-booth-number="35" d="M269.28 251.42h13.98v14.04h-13.98z" transform="rotate(11.83 276.17 258.351)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1117.203 1447.936) scale(.93 1)"><tspan x="0" y="0">35</tspan></text>
+
+    <path id="booth36" class="booth" data-booth-number="36" d="M255.72 248.58h13.98v14.04h-13.98z" transform="rotate(11.83 262.657 255.507)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1110.282 1381.026) scale(.93 1)"><tspan x="0" y="0">36</tspan></text>
+
+    <path id="booth37" class="booth" data-booth-number="37" d="M263.87 278.63h13.98v14.04h-13.98z" transform="rotate(11.83 270.793 285.541)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1251.278 1435.388) scale(.93 1)"><tspan x="0" y="0">37</tspan></text>
+
+    <path id="booth38" class="booth" data-booth-number="38" d="M277.6 281.51h13.98v14.04H277.6z" transform="rotate(11.83 284.504 288.413)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1258.307 1503.138) scale(.93 1)"><tspan x="0" y="0">38</tspan></text>
+
+    <path id="booth39" class="booth" data-booth-number="39" d="M261 292.31h13.98v14.04H261z" transform="rotate(11.83 267.916 299.205)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1318.68 1428.42) scale(.93 1)"><tspan x="0" y="0">39</tspan></text>
+
+    <path id="booth40" class="booth" data-booth-number="40" d="M274.74 295.18h13.98v14.04h-13.98z" transform="rotate(11.83 281.628 302.077)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1325.714 1496.123) scale(.93 1)"><tspan x="0" y="0">40</tspan></text>
+
+    <path id="booth41" class="booth" data-booth-number="41" d="M302.13 300.92h13.98v14.04h-13.98z" transform="rotate(11.83 309.05 307.82)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1339.715 1631.226) scale(.93 1)"><tspan x="0" y="0">41</tspan></text>
+
+    <path id="booth42" class="booth" data-booth-number="42" d="M315.89 303.8h13.98v14.04h-13.98z" transform="rotate(11.83 322.81 310.687)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1346.734 1699.072) scale(.93 1)"><tspan x="0" y="0">42</tspan></text>
+
+    <path id="booth43" class="booth" data-booth-number="43" d="M329.6 306.67h13.98v14.04H329.6z" transform="rotate(11.83 336.474 313.564)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1353.735 1766.624) scale(.93 1)"><tspan x="0" y="0">43</tspan></text>
+
+    <path id="booth44" class="booth" data-booth-number="44" d="M332.46 292.8h13.98v14.04h-13.98z" transform="rotate(11.83 339.33 299.708)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1285.368 1773.492) scale(.93 1)"><tspan x="0" y="0">44</tspan></text>
+
+    <path id="booth45" class="booth" data-booth-number="45" d="M318.73 289.93h13.98v14.04h-13.98z" transform="rotate(11.83 325.62 296.836)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1278.329 1705.838) scale(.93 1)"><tspan x="0" y="0">45</tspan></text>
+
+    <path id="booth46" class="booth" data-booth-number="46" d="M305.03 287.08h13.98v14.04h-13.98z" transform="rotate(11.83 311.913 294.012)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1271.478 1638.253) scale(.93 1)"><tspan x="0" y="0">46</tspan></text>
+
+    <path id="booth47" class="booth" data-booth-number="47" d="M324.53 263.13h13.98v14.04h-13.98z" transform="rotate(11.83 331.428 270.04)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1146.139 1720.434) scale(.93 1)"><tspan x="0" y="0">47</tspan></text>
+
+    <path id="booth48" class="booth" data-booth-number="48" d="M338.35 266.03h13.98v14.04h-13.98z" transform="rotate(11.83 345.241 272.95)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1153.181 1788.527) scale(.93 1)"><tspan x="0" y="0">48</tspan></text>
+
+    <path id="booth49" class="booth" data-booth-number="49" d="M327.42 249.33h13.98v14.04h-13.98z" transform="rotate(11.83 334.295 256.28)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1078.1 1727.433) scale(.93 1)"><tspan x="0" y="0">49</tspan></text>
+
+    <path id="booth50" class="booth" data-booth-number="50" d="M341.24 252.23h13.98v14.04h-13.98z" transform="rotate(11.83 348.103 259.142)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -1085.185 1795.58) scale(.93 1)"><tspan x="0" y="0">50</tspan></text>
+
+    <path id="booth51" class="booth" data-booth-number="51" d="M332.77 222.21h13.98v14.04h-13.98z" transform="rotate(11.83 339.678 229.138)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -944.537 1739.741) scale(.93 1)"><tspan x="0" y="0">51</tspan></text>
+
+    <path id="booth52" class="booth" data-booth-number="52" d="M346.62 225.11h13.98v14.04h-13.98z" transform="rotate(11.83 353.49 232.048)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -951.608 1808.032) scale(.93 1)"><tspan x="0" y="0">52</tspan></text>
+
+    <path id="booth53" class="booth" data-booth-number="53" d="M335.73 208.39h13.98v14.04h-13.98z" transform="rotate(11.83 342.636 215.32)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -876.366 1747.068) scale(.93 1)"><tspan x="0" y="0">53</tspan></text>
+
+    <path id="booth54" class="booth" data-booth-number="54" d="M349.56 211.29h13.98v14.04h-13.98z" transform="rotate(11.83 356.45 218.23)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -883.442 1815.31) scale(.93 1)"><tspan x="0" y="0">54</tspan></text>
+
+    <path id="booth55" class="booth" data-booth-number="55" d="M341.1 180.39h13.98v14.04H341.1z" transform="rotate(11.83 347.982 187.353)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -738.552 1758.984) scale(.93 1)"><tspan x="0" y="0">55</tspan></text>
+
+    <path id="booth56" class="booth" data-booth-number="56" d="M354.68 183.24h13.98v14.04h-13.98z" transform="rotate(11.83 361.544 190.191)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -745.463 1825.99) scale(.93 1)"><tspan x="0" y="0">56</tspan></text>
+
+    <path id="booth57" class="booth" data-booth-number="57" d="M343.99 166.57h13.98v14.04h-13.98z" transform="rotate(11.83 350.892 173.54)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -670.406 1766.07) scale(.93 1)"><tspan x="0" y="0">57</tspan></text>
+
+    <path id="booth58" class="booth" data-booth-number="58" d="M357.58 169.41h13.98v14.04h-13.98z" transform="rotate(11.83 364.454 176.378)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(11.83 -677.322 1833.027) scale(.93 1)"><tspan x="0" y="0">58</tspan></text>
+
+    <path id="booth59" class="booth" data-booth-number="59" d="M376.24 237.57h13.98v14.04h-13.98z" transform="rotate(20.83 383.167 244.536)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(20.83 -477.977 1155.947) scale(.93 1)"><tspan x="0" y="0">59</tspan></text>
+
+    <path id="booth60" class="booth" data-booth-number="60" d="M389.22 242.5h13.98v14.04h-13.98z" transform="rotate(20.83 396.137 249.463)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(20.83 -484.925 1193.727) scale(.93 1)"><tspan x="0" y="0">60</tspan></text>
+
+    <path id="booth61" class="booth" data-booth-number="61" d="M402.33 247.49h13.98v14.04h-13.98z" transform="rotate(20.83 409.258 254.448)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(20.83 -491.917 1231.88) scale(.93 1)"><tspan x="0" y="0">61</tspan></text>
+
+    <path id="booth62" class="booth" data-booth-number="62" d="M397.27 260.65h13.98v14.04h-13.98z" transform="rotate(20.83 404.197 267.611)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(20.83 -530.246 1224.695) scale(.93 1)"><tspan x="0" y="0">62</tspan></text>
+
+    <path id="booth63" class="booth" data-booth-number="63" d="M384.2 255.71h13.98v14.04H384.2z" transform="rotate(20.83 391.114 262.676)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(20.83 -523.343 1186.67) scale(.93 1)"><tspan x="0" y="0">63</tspan></text>
+
+    <path id="booth64" class="booth" data-booth-number="64" d="M371.25 250.69h13.98v14.04h-13.98z" transform="rotate(20.83 378.183 257.657)"/>
+    <text class="booth-number" style="font-size:6px" transform="rotate(20.83 -516.162 1148.933) scale(.93 1)"><tspan x="0" y="0">64</tspan></text>
+
+    <path id="booth65" class="booth" data-booth-number="65" d="M463.02 209.54H477v14.04h-13.98z" transform="rotate(30.53 470.067 216.602)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 466.52 216.89)"><tspan x="0" y="0">65</tspan></text>
+
+    <path id="booth66" class="booth" data-booth-number="66" d="M475 216.6h13.98v14.04H475z" transform="rotate(30.53 482.059 223.684)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 478.5 223.95)"><tspan x="0" y="0">66</tspan></text>
+
+    <path id="booth67" class="booth" data-booth-number="67" d="M455.87 221.66h13.98v14.04h-13.98z" transform="rotate(30.53 462.923 228.729)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 459.37 229.01)"><tspan x="0" y="0">67</tspan></text>
+
+    <path id="booth68" class="booth" data-booth-number="68" d="M467.85 228.73h13.98v14.04h-13.98z" transform="rotate(30.53 474.892 235.797)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 471.35 236.07)"><tspan x="0" y="0">68</tspan></text>
+
+    <path id="booth69" class="booth" data-booth-number="69" d="M441.34 245.86h13.98v14.04h-13.98z" transform="rotate(30.53 448.387 252.933)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 444.83 253.21)"><tspan x="0" y="0">69</tspan></text>
+
+    <path id="booth70" class="booth" data-booth-number="70" d="M453.4 252.98h13.98v14.04H453.4z" transform="rotate(30.53 460.449 260.054)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 456.89 260.33)"><tspan x="0" y="0">70</tspan></text>
+
+    <path id="booth71" class="booth" data-booth-number="71" d="M434.18 257.91h13.98v14.04h-13.98z" transform="rotate(30.53 441.223 264.986)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 437.67 265.26)"><tspan x="0" y="0">71</tspan></text>
+
+    <path id="booth72" class="booth" data-booth-number="72" d="M446.28 265.04h13.98v14.04h-13.98z" transform="rotate(30.53 453.327 272.116)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 449.77 272.39)"><tspan x="0" y="0">72</tspan></text>
+
+    <path id="booth73" class="booth" data-booth-number="73" d="M419.94 282.05h13.98v14.04h-13.98z" transform="rotate(30.53 426.985 289.128)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 423.43 289.4)"><tspan x="0" y="0">73</tspan></text>
+
+    <path id="booth74" class="booth" data-booth-number="74" d="M432.04 289.19h13.98v14.04h-13.98z" transform="rotate(30.53 439.075 296.282)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 435.53 296.54)"><tspan x="0" y="0">74</tspan></text>
+
+    <path id="booth75" class="booth" data-booth-number="75" d="M412.66 294.38h13.98v14.04h-13.98z" transform="rotate(30.53 419.703 301.47)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 416.15 301.73)"><tspan x="0" y="0">75</tspan></text>
+
+    <path id="booth76" class="booth" data-booth-number="76" d="M424.76 301.52h13.98v14.04h-13.98z" transform="rotate(30.53 431.807 308.6)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 428.25 308.87)"><tspan x="0" y="0">76</tspan></text>
+
+    <path id="booth77" class="booth" data-booth-number="77" d="M422.31 332.9h13.98v14.04h-13.98z" transform="rotate(30.53 429.347 339.98)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 425.8 340.24)"><tspan x="0" y="0">77</tspan></text>
+
+    <path id="booth78" class="booth" data-booth-number="78" d="M410.2 325.75h13.98v14.04H410.2z" transform="rotate(30.53 417.239 332.833)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 413.69 333.1)"><tspan x="0" y="0">78</tspan></text>
+
+    <path id="booth79" class="booth" data-booth-number="79" d="M398.04 318.58h13.98v14.04h-13.98z" transform="rotate(30.53 405.083 325.658)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 401.54 325.93)"><tspan x="0" y="0">79</tspan></text>
+
+    <path id="booth80" class="booth" data-booth-number="80" d="M390.99 330.66h13.98v14.04h-13.98z" transform="rotate(30.53 398.027 337.741)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 394.49 338.01)"><tspan x="0" y="0">80</tspan></text>
+
+    <path id="booth81" class="booth" data-booth-number="81" d="M403.08 337.79h13.98v14.04h-13.98z" transform="rotate(30.53 410.112 344.876)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 406.57 345.14)"><tspan x="0" y="0">81</tspan></text>
+
+    <path id="booth82" class="booth" data-booth-number="82" d="M415.1 345.04h13.98v14.04H415.1z" transform="rotate(30.53 422.13 352.128)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 418.59 352.39)"><tspan x="0" y="0">82</tspan></text>
+
+    <path id="booth83" class="booth" data-booth-number="83" d="M439.21 359.1h13.98v14.04h-13.98z" transform="rotate(30.53 446.246 366.196)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 442.7 366.45)"><tspan x="0" y="0">83</tspan></text>
+
+    <path id="booth84" class="booth" data-booth-number="84" d="M451.36 366.27h13.98v14.04h-13.98z" transform="rotate(30.53 458.401 373.371)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 454.85 373.62)"><tspan x="0" y="0">84</tspan></text>
+
+    <path id="booth85" class="booth" data-booth-number="85" d="M446.31 347.05h13.98v14.04h-13.98z" transform="rotate(30.53 453.35 354.14)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 449.81 354.4)"><tspan x="0" y="0">85</tspan></text>
+
+    <path id="booth86" class="booth" data-booth-number="86" d="M458.46 354.22h13.98v14.04h-13.98z" transform="rotate(30.53 465.505 361.315)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 461.96 361.57)"><tspan x="0" y="0">86</tspan></text>
+
+    <path id="booth87" class="booth" data-booth-number="87" d="M448.59 315.56h13.98v14.04h-13.98z" transform="rotate(30.53 455.64 322.647)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 452.08 322.9)"><tspan x="0" y="0">87</tspan></text>
+
+    <path id="booth88" class="booth" data-booth-number="88" d="M460.71 322.75h13.98v14.04h-13.98z" transform="rotate(30.53 467.76 329.832)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 464.21 330.1)"><tspan x="0" y="0">88</tspan></text>
+
+    <path id="booth89" class="booth" data-booth-number="89" d="M472.76 329.81h13.98v14.04h-13.98z" transform="rotate(30.53 479.806 336.9)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 476.26 337.16)"><tspan x="0" y="0">89</tspan></text>
+
+    <path id="booth90" class="booth" data-booth-number="90" d="M485.07 337.11h13.98v14.04h-13.98z" transform="rotate(30.53 492.117 344.21)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 488.56 344.46)"><tspan x="0" y="0">90</tspan></text>
+
+    <path id="booth91" class="booth" data-booth-number="91" d="M492.24 325.04h13.98v14.04h-13.98z" transform="rotate(30.53 499.293 332.132)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 495.73 332.39)"><tspan x="0" y="0">91</tspan></text>
+
+    <path id="booth92" class="booth" data-booth-number="92" d="M480.05 317.85h13.98v14.04h-13.98z" transform="rotate(30.53 487.091 324.93)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 483.54 325.2)"><tspan x="0" y="0">92</tspan></text>
+
+    <path id="booth93" class="booth" data-booth-number="93" d="M468.01 310.75h13.98v14.04h-13.98z" transform="rotate(30.53 475.058 317.84)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 471.51 318.1)"><tspan x="0" y="0">93</tspan></text>
+
+    <path id="booth94" class="booth" data-booth-number="94" d="M455.71 303.49h13.98v14.04h-13.98z" transform="rotate(30.53 462.758 310.567)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 459.2 310.84)"><tspan x="0" y="0">94</tspan></text>
+
+    <path id="booth95" class="booth" data-booth-number="95" d="M469.83 279.86h13.98v14.04h-13.98z" transform="rotate(30.53 476.878 286.93)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 473.32 287.21)"><tspan x="0" y="0">95</tspan></text>
+
+    <path id="booth96" class="booth" data-booth-number="96" d="M481.86 286.96h13.98V301h-13.98z" transform="rotate(30.53 488.917 294.038)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 485.35 294.31)"><tspan x="0" y="0">96</tspan></text>
+
+    <path id="booth97" class="booth" data-booth-number="97" d="M494.07 294.16h13.98v14.04h-13.98z" transform="rotate(30.53 501.118 301.24)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 497.56 301.51)"><tspan x="0" y="0">97</tspan></text>
+
+    <path id="booth98" class="booth" data-booth-number="98" d="M506.22 301.33h13.98v14.04h-13.98z" transform="rotate(30.53 513.274 308.415)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 509.72 308.68)"><tspan x="0" y="0">98</tspan></text>
+
+    <path id="booth99" class="booth" data-booth-number="99" d="M513.26 289.15h13.98v14.04h-13.98z" transform="rotate(30.53 520.305 296.24)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 516.75 296.5)"><tspan x="0" y="0">99</tspan></text>
+
+    <path id="booth100" class="booth" data-booth-number="100" d="M501.14 282h13.98v14.04h-13.98z" transform="rotate(30.53 508.197 289.091)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 503.49 288.34)"><tspan x="0" y="0">100</tspan></text>
+
+    <path id="booth101" class="booth" data-booth-number="101" d="M489.17 274.94h13.98v14.04h-13.98z" transform="rotate(30.53 496.228 282.023)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 491.52 281.28)"><tspan x="0" y="0">101</tspan></text>
+
+    <path id="booth102" class="booth" data-booth-number="102" d="M476.97 267.74h13.98v14.04h-13.98z" transform="rotate(30.53 484.026 274.821)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 479.32 274.08)"><tspan x="0" y="0">102</tspan></text>
+
+    <path id="booth103" class="booth" data-booth-number="103" d="M491.4 244.37h13.98v14.04H491.4z" transform="rotate(30.53 498.452 251.435)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 493.75 250.71)"><tspan x="0" y="0">103</tspan></text>
+
+    <path id="booth104" class="booth" data-booth-number="104" d="M503.36 251.42h13.98v14.04h-13.98z" transform="rotate(30.53 510.42 258.503)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 505.71 257.76)"><tspan x="0" y="0">104</tspan></text>
+
+    <path id="booth105" class="booth" data-booth-number="105" d="M515.52 258.54h13.98v14.04h-13.98z" transform="rotate(30.53 522.579 265.619)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 517.87 264.88)"><tspan x="0" y="0">105</tspan></text>
+
+    <path id="booth106" class="booth" data-booth-number="106" d="M498.56 232.23h13.98v14.04h-13.98z" transform="rotate(30.53 505.613 239.303)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 500.9 238.57)"><tspan x="0" y="0">106</tspan></text>
+
+    <path id="booth107" class="booth" data-booth-number="107" d="M510.6 239.34h13.98v14.04H510.6z" transform="rotate(30.53 517.652 246.412)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 512.95 245.68)"><tspan x="0" y="0">107</tspan></text>
+
+    <path id="booth108" class="booth" data-booth-number="108" d="M522.74 246.5h13.98v14.04h-13.98z" transform="rotate(30.53 529.802 253.568)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 525.09 252.84)"><tspan x="0" y="0">108</tspan></text>
+
+    <path id="booth109" class="booth" data-booth-number="109" d="M546.5 260.28h13.98v14.04H546.5z" transform="rotate(30.53 553.566 267.359)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 548.85 266.62)"><tspan x="0" y="0">109</tspan></text>
+
+    <path id="booth110" class="booth" data-booth-number="110" d="M558.7 267.48h13.98v14.04H558.7z" transform="rotate(30.53 565.768 274.56)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 561.05 273.82)"><tspan x="0" y="0">110</tspan></text>
+
+    <path id="booth111" class="booth" data-booth-number="111" d="M539.42 272.29h13.98v14.04h-13.98z" transform="rotate(30.53 546.471 279.374)"/>
+    <text class="booth-number" style="font-size:6px" transform="matrix(.80107 .47243 -.50799 .86136 541.77 278.63)"><tspan x="0" y="0">111</tspan></text>
+
+    <path id="boothC1" class="booth" data-booth-number="C1" d="M52.6 450.08h13.98v.02l.01-14.01-13.98-.02-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(55.77 445.14)"><tspan x="0" y="0">C1</tspan></text>
+    
+    <path id="boothC2" class="booth" data-booth-number="C2" d="M52.6 436.06h13.98v.01l.01-14.01-13.98-.01-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(55.77 431.12)"><tspan x="0" y="0">C2</tspan></text>
+    
+    <path id="boothC3" class="booth" data-booth-number="C3" d="M52.6 422.03h13.98v.02l.01-14.01-13.98-.02-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(55.77 417.09)"><tspan x="0" y="0">C3</tspan></text>
+    
+    <path id="boothC4" class="booth" data-booth-number="C4" d="M52.6 408.01h13.98v.01l.01-14.01-13.98-.01-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(55.77 403.06)"><tspan x="0" y="0">C4</tspan></text>
+    
+    <path id="boothC5" class="booth" data-booth-number="C5" d="M52.6 393.98h13.98v.02l.01-14.01-13.98-.02-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(55.77 389.04)"><tspan x="0" y="0">C5</tspan></text>
+    
+    <path id="boothC6" class="booth" data-booth-number="C6" d="M52.6 379.95h13.98v.02l.01-14.01-13.98-.02-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(55.77 375.01)"><tspan x="0" y="0">C6</tspan></text>
+    
+    <path id="boothC7" class="booth" data-booth-number="C7" d="M66.59 379.95h13.98v.02l.02-14.01-13.98-.02-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(69.76 375.01)"><tspan x="0" y="0">C7</tspan></text>
+    
+    <path id="boothC8" class="booth" data-booth-number="C8" d="M66.59 393.98h13.98v.02l.02-14.01-13.98-.02-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(69.76 389.04)"><tspan x="0" y="0">C8</tspan></text>
+    
+    <path id="boothC9" class="booth" data-booth-number="C9" d="M66.59 408.01h13.98v.01l.02-14.01-13.98-.01-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(69.76 403.06)"><tspan x="0" y="0">C9</tspan></text>
+    
+    <path id="boothC10" class="booth" data-booth-number="C10" d="M66.59 422.03h13.98v.02l.02-14.01-13.98-.02-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(67.97 417.09)"><tspan x="0" y="0">C10</tspan></text>
+    
+    <path id="boothC11" class="booth" data-booth-number="C11" d="M66.59 436.06h13.98v.01l.02-14.01-13.98-.01-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(67.97 431.12)"><tspan x="0" y="0">C11</tspan></text>
+    
+    <path id="boothC12" class="booth" data-booth-number="C12" d="M66.59 450.08h13.98v.02l.02-14.01-13.98-.02-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(67.97 445.14)"><tspan x="0" y="0">C12</tspan></text>
+    
+    <path id="boothC13" class="booth" data-booth-number="C13" d="M95.33 407.95h13.98v.01l.02-14.01-13.98-.01-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(96.71 403)"><tspan x="0" y="0">C13</tspan></text>
+    
+    <path id="boothC14" class="booth" data-booth-number="C14" d="M109.33 407.95h13.98v.01l.02-14.01-13.98-.01-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(110.71 403)"><tspan x="0" y="0">C14</tspan></text>
+    
+    <path id="boothC15" class="booth" data-booth-number="C15" d="M123.33 407.95h13.98v.01l.01-14.01-13.98-.01-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(124.7 403)"><tspan x="0" y="0">C15</tspan></text>
+    
+    <path id="boothC16" class="booth" data-booth-number="C16" d="M137.32 407.95h13.98v.01l.02-14.01-13.98-.01-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(138.7 403)"><tspan x="0" y="0">C16</tspan></text>
+    
+    <path id="boothC17" class="booth" data-booth-number="C17" d="M95.33 422.18h13.98v.02l.02-14.01-13.98-.02-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(96.71 417.24)"><tspan x="0" y="0">C17</tspan></text>
+    
+    <path id="boothC18" class="booth" data-booth-number="C18" d="M109.33 422.18h13.98v.02l.02-14.01-13.98-.02-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(110.71 417.24)"><tspan x="0" y="0">C18</tspan></text>
+    
+    <path id="boothC19" class="booth" data-booth-number="C19" d="M123.33 422.18h13.98v.02l.01-14.01-13.98-.02-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(124.7 417.24)"><tspan x="0" y="0">C19</tspan></text>
+    
+    <path id="boothC20" class="booth" data-booth-number="C20" d="M137.32 422.18h13.98v.02l.02-14.01-13.98-.02-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(138.7 417.24)"><tspan x="0" y="0">C20</tspan></text>
+    
+    <path id="boothC21" class="booth" data-booth-number="C21" d="M165.3 407.95h13.98v.01l.02-14.01-13.98-.01-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(166.68 403)"><tspan x="0" y="0">C21</tspan></text>
+    
+    <path id="boothC22" class="booth" data-booth-number="C22" d="M179.3 407.95h13.98v.01l.01-14.01-13.98-.01-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(180.68 403)"><tspan x="0" y="0">C22</tspan></text>
+    
+    <path id="boothC23" class="booth" data-booth-number="C23" d="M193.29 407.95h13.98v.01l.02-14.01-13.98-.01-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(194.67 403)"><tspan x="0" y="0">C23</tspan></text>
+    
+    <path id="boothC24" class="booth" data-booth-number="C24" d="M207.29 407.95h13.98v.01l.02-14.01-13.98-.01-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(208.67 403)"><tspan x="0" y="0">C24</tspan></text>
+    
+    <path id="boothC25" class="booth" data-booth-number="C25" d="M165.3 422.18h13.98v.02l.02-14.01-13.98-.02-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(166.68 417.24)"><tspan x="0" y="0">C25</tspan></text>
+    
+    <path id="boothC26" class="booth" data-booth-number="C26" d="M179.3 422.18h13.98v.02l.01-14.01-13.98-.02-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(180.68 417.24)"><tspan x="0" y="0">C26</tspan></text>
+    
+    <path id="boothC27" class="booth" data-booth-number="C27" d="M193.29 422.18h13.98v.02l.02-14.01-13.98-.02-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(194.67 417.24)"><tspan x="0" y="0">C27</tspan></text>
+    
+    <path id="boothC28" class="booth" data-booth-number="C28" d="M207.29 422.18h13.98v.02l.02-14.01-13.98-.02-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(208.67 417.24)"><tspan x="0" y="0">C28</tspan></text>
+    
+    <path id="boothC29" class="booth" data-booth-number="C29" d="M235.31 450.08h13.98v.02l.01-14.01-13.98-.02-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(236.68 445.14)"><tspan x="0" y="0">C29</tspan></text>
+    
+    <path id="boothC30" class="booth" data-booth-number="C30" d="M235.31 436.06h13.98v.01l.01-14.01-13.98-.01-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(236.68 431.12)"><tspan x="0" y="0">C30</tspan></text>
+    
+    <path id="boothC31" class="booth" data-booth-number="C31" d="M235.31 422.03h13.98v.02l.01-14.01-13.98-.02-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(236.68 417.09)"><tspan x="0" y="0">C31</tspan></text>
+    
+    <path id="boothC32" class="booth" data-booth-number="C32" d="M235.31 408.01h13.98v.01l.01-14.01-13.98-.01-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(236.68 403.06)"><tspan x="0" y="0">C32</tspan></text>
+    
+    <path id="boothC33" class="booth" data-booth-number="C33" d="M235.31 393.98h13.98v.02l.01-14.01-13.98-.02-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(236.68 389.04)"><tspan x="0" y="0">C33</tspan></text>
+    
+    <path id="boothC34" class="booth" data-booth-number="C34" d="M235.31 379.95h13.98v.02l.01-14.01-13.98-.02-.01 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(236.68 375.01)"><tspan x="0" y="0">C34</tspan></text>
+    
+    <path id="boothC35" class="booth" data-booth-number="C35" d="M249.3 379.95h13.98v.02l.02-14.01-13.98-.02-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(250.68 375.01)"><tspan x="0" y="0">C35</tspan></text>
+    
+    <path id="boothC36" class="booth" data-booth-number="C36" d="M249.3 393.98h13.98v.02l.02-14.01-13.98-.02-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(250.68 389.04)"><tspan x="0" y="0">C36</tspan></text>
+    
+    <path id="boothC37" class="booth" data-booth-number="C37" d="M249.3 408.01h13.98v.01l.02-14.01-13.98-.01-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(250.68 403.06)"><tspan x="0" y="0">C37</tspan></text>
+    
+    <path id="boothC38" class="booth" data-booth-number="C38" d="M249.3 422.03h13.98v.02l.02-14.01-13.98-.02-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(250.68 417.09)"><tspan x="0" y="0">C38</tspan></text>
+    
+    <path id="boothC39" class="booth" data-booth-number="C39" d="M249.3 436.06h13.98v.01l.02-14.01-13.98-.01-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(250.68 431.12)"><tspan x="0" y="0">C39</tspan></text>
+    
+    <path id="boothC40" class="booth" data-booth-number="C40" d="M249.3 450.08h13.98v.02l.02-14.01-13.98-.02-.02 14.01" />
+    <text class="booth-number" style="font-size:7px" transform="translate(250.68 445.14)"><tspan x="0" y="0">C40</tspan></text>
+</svg>
+            </div>
+
+            <div x-show="tooltip.visible" x-bind:style="`top: ${tooltip.y}px; left: ${tooltip.x}px`" class="tooltip">
+                <div x-html="tooltip.content"></div>
+            </div>
+        </div>
+
+        <div class="announcer-container w-full mb-0 rounded-b-xl -mt-1">
+            <div class="announcer-track">
+                <span>📢 LIMITED BOOTHS! BOOK YOUR SLOT FOR ABSOLUT BAZAAR x GAYA RAYA 2026 @ BRIDEX BRUNEI NOW! 📢 FIRST COME FIRST SERVE.</span>
+                <span>📢 LIMITED BOOTHS! BOOK YOUR SLOT FOR ABSOLUT BAZAAR x GAYA RAYA 2026 @ BRIDEX BRUNEI NOW! 📢 FIRST COME FIRST SERVE.</span>
+                <span>📢 LIMITED BOOTHS! BOOK YOUR SLOT FOR ABSOLUT BAZAAR x GAYA RAYA 2026 @ BRIDEX BRUNEI NOW! 📢 FIRST COME FIRST SERVE.</span>
+            </div>
+        </div>
+
+        <div class="py-2 px-4 bg-yellow-50/50 border-b border-yellow-100 mb-4">
+            <div class="max-w-xs mx-auto flex gap-2">
+                <input type="text" x-model="searchQuery" @keyup.enter="searchBooth" placeholder="SEARCH BOOTH (E.G. C1)" class="neu-input py-1 text-xs uppercase font-bold text-center tracking-widest flex-1">
+                <button @click="searchBooth" class="neu-btn w-8 h-8 flex-shrink-0 flex items-center justify-center text-yellow-600 bg-white shadow-sm hover:text-yellow-800">
+                    <i class="fas fa-search text-xs"></i>
+                </button>
+            </div>
+        </div>
+
+        <div x-show="selectedBooths.length > 0" x-transition class="fixed bottom-0 left-0 right-0 z-50 p-4">
+            <div class="max-w-7xl mx-auto neu-panel p-4 flex flex-col sm:flex-row justify-between items-center gap-4 bg-opacity-95 backdrop-blur-md">
+                <div class="flex-1 w-full">
+                    <div class="flex flex-wrap gap-2">
+                        <template x-for="booth in selectedBooths" :key="booth">
+                            <div class="neu-pressed px-3 py-1 rounded-lg flex items-center gap-3">
+                                <span class="font-bold text-yellow-800 text-sm" x-text="booth"></span>
+                                <span class="text-[10px] text-gray-600" x-text="'BND ' + getPrice(booth).toLocaleString()"></span>
+                                <button @click="toggleSelection(booth)" class="text-red-400 hover:text-red-600"><i class="fas fa-times"></i></button>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-end">
+                    <div class="text-right">
+                        <div class="text-xs text-gray-500">Total Amount</div>
+                        <div class="text-xl font-bold text-yellow-600" x-text="'BND ' + totalPrice.toLocaleString()"></div>
+                        <div class="text-xs text-gray-600">Deposit (50%): BND <span x-text="(totalPrice/2).toLocaleString()"></span></div>
+                    </div>
+                    <button @click="modals.booking = true" class="px-8 py-3 neu-btn-primary font-bold shadow-lg">Proceed <i class="fas fa-arrow-right ml-2"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="neu-panel mt-4 p-6 rounded-none rounded-t-2xl mx-2 mb-0" style="background: var(--bg-color);">
+        <div class="max-w-7xl mx-auto flex flex-row justify-between items-center relative z-10">
+            <div class="social-media-icons flex flex-row gap-4">
+                <a href="https://www.facebook.com/absolutbazaar" target="_blank" class="neu-icon-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/absolutbazaar" target="_blank" class="neu-icon-btn"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@absolutevent" target="_blank" class="neu-icon-btn"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="flex items-center">
+                <div class="text-right mr-3">
+                    <h3 class="font-bold text-sm text-gray-700">Absolut Bazaar</h3>
+                    <p class="text-yellow-600 text-[10px]">Contact: info@absolutevent.my</p>
+                </div>
+                <div class="logo-container">
+                    <img src="https://i.imgur.com/uikzokX.png" alt="Logo" class="h-6 w-6 brightness-0 invert">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div x-show="modals.booking" class="fixed inset-0 neu-modal-overlay z-50 flex items-center justify-center p-4" x-cloak>
+        <div class="neu-panel max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 relative bg-white">
+            <div class="flex justify-between items-center mb-6 border-b border-gray-200 pb-4">
+                <h2 class="text-2xl font-bold text-gray-800 flex items-center">
+                    <i class="fas fa-file-signature text-yellow-500 mr-3"></i> Booth Booking Form
+                </h2>
+                <button @click="modals.booking = false" class="text-gray-400 hover:text-yellow-600 transition"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <form @submit.prevent="generateSummary" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input type="text" x-model="form.companyName" required placeholder="Company Name *" class="neu-input">
+                    <input type="text" x-model="form.brandName" required placeholder="Brand Name *" class="neu-input">
+                    <input type="text" x-model="form.personInCharge" required placeholder="PIC Name *" class="neu-input">
+                    <input type="tel" x-model="form.phoneNumber" required placeholder="Phone *" class="neu-input">
+                    <input type="email" x-model="form.email" required placeholder="Email *" class="neu-input w-full md:col-span-2">
+                </div>
+                <div class="grid grid-cols-1 gap-4">
+                    <input type="url" x-model="form.socialMedia" placeholder="Social Media Link" class="neu-input">
+                    <textarea x-model="form.sellingItems" required rows="3" placeholder="Products/Services to Sell *" class="neu-input"></textarea>
+                    <textarea x-model="form.billingAddress" required rows="3" placeholder="Billing Address *" class="neu-input"></textarea>
+                </div>
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" x-model="form.termsAgreement" required>
+                    <span class="text-sm text-gray-700">I understand that this is a booking request subject to approval.</span>
+                </div>
+                <div class="flex gap-4">
+                    <button type="button" @click="modals.booking = false" class="flex-1 py-3 border rounded-lg">Cancel</button>
+                    <button type="submit" class="flex-1 py-3 neu-btn-primary font-bold">Submit Booking Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div x-show="modals.summary" class="fixed inset-0 neu-modal-overlay z-50 flex items-center justify-center p-4" x-cloak>
+        <div class="neu-panel max-w-xl w-full max-h-[90vh] overflow-y-auto p-6 relative bg-white">
+            <div class="text-center mb-6 border-b border-gray-200 pb-4"><h2 class="text-2xl font-bold text-gray-800">Booking Summary</h2></div>
+            <div class="space-y-6">
+                <div class="neu-pressed p-4 rounded-xl">
+                    <div class="text-xs text-gray-500 uppercase font-bold mb-2">Customer Details</div>
+                    <div class="font-bold" x-text="form.companyName"></div>
+                    <div class="text-sm">PIC: <span x-text="form.personInCharge"></span> (<span x-text="form.phoneNumber"></span>)</div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-700 mb-2">Selected Booths</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <template x-for="booth in selectedBooths">
+                            <span class="neu-pressed px-3 py-1 text-sm font-bold text-yellow-800" x-text="booth"></span>
+                        </template>
+                    </div>
+                    
+                    <div class="neu-pressed p-4 rounded-xl flex justify-between items-center mb-2">
+                        <span class="text-gray-600 font-bold">Total Amount</span>
+                        <div class="text-right">
+                            <div class="font-bold text-lg text-yellow-600" x-text="'BND ' + totalPrice.toLocaleString()"></div>
+                            <div class="text-xs text-gray-500" x-text="'| RM ' + (totalPrice * 3.4).toLocaleString(undefined, {minimumFractionDigits: 2})"></div>
+                        </div>
+                    </div>
+                    <div class="neu-pressed p-4 rounded-xl flex justify-between items-center mb-2">
+                        <div>
+                            <span class="text-gray-600 font-bold block">Deposit Required (50%)</span>
+                            <span class="text-[10px] text-red-500 font-bold uppercase">(Non-Refundable)</span>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-lg text-yellow-600" x-text="'BND ' + (totalPrice/2).toLocaleString()"></div>
+                            <div class="text-xs text-gray-500" x-text="'| RM ' + ((totalPrice/2) * 3.4).toLocaleString(undefined, {minimumFractionDigits: 2})"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
+                    <button @click="handleBookingAction('absolut')" class="py-4 bg-green-600 hover:bg-green-700 text-white rounded-xl shadow-lg flex justify-center items-center font-bold">
+                        <i class="fab fa-whatsapp text-2xl mr-2"></i> Send to Absolut (MY)
+                    </button>
+                    <button @click="handleBookingAction('brunei')" class="py-4 bg-teal-600 hover:bg-teal-700 text-white rounded-xl shadow-lg flex justify-center items-center font-bold">
+                        <i class="fab fa-whatsapp text-2xl mr-2"></i> Send to Partner (BN)
+                    </button>
+                </div>
+                <button @click="handleBookingAction('copy')" class="w-full py-3 neu-btn text-sm font-bold text-gray-600 mt-2">Copy Booking Summary</button>
+                <button @click="modals.summary = false; modals.booking = true" class="w-full py-2 text-xs text-gray-400 hover:text-gray-600">Back to Edit</button>
+            </div>
+        </div>
+    </div>
+
+    <div x-show="modals.success" class="fixed inset-0 neu-modal-overlay z-[70] flex items-center justify-center p-4" x-cloak>
+        <div class="neu-panel max-w-md w-full p-8 relative animate-fade-in-up bg-white text-center">
+            <div class="mb-4"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto text-green-500 text-3xl shadow-md"><i class="fas fa-check"></i></div></div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Booking Generated!</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-6">Kindly send booking summary to our sales representative via WhatsApp.</p>
+            <button @click="modals.success = false" class="px-8 py-3 neu-btn-primary font-bold shadow-lg w-full">Okay, Got it!</button>
+        </div>
+    </div>
+
+    <script>
+        const SUPABASE_URL = 'https://amnkzofafegoglcbctan.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFtbmt6b2ZhZmVnb2dsY2JjdGFuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY4NDI1NTMsImV4cCI6MjA4MjQxODU1M30.lRlLKq_12QKJIM6LvZCIntktKbJ8-y8s8g9zl6TmhJM';
+
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('boothSystem', () => ({
+                loading: true, boothData: {}, selectedBooths: [], showLegend: false,
+                modals: { welcome: true, booking: false, summary: false, success: false },
+                tooltip: { visible: false, x: 0, y: 0, content: '' },
+                notification: { visible: false, title: '', message: '', icon: '' },
+                searchQuery: '',
+                form: { companyName: '', brandName: '', personInCharge: '', phoneNumber: '', email: '', socialMedia: '', sellingItems: '', billingAddress: '', termsAgreement: false },
+                
+                // ZOOM & PINCH VARS
+                zoomLevel: 1, panX: 0, panY: 0, isDragging: false, startX: 0, startY: 0,
+                initialPinchDist: 0, initialZoom: 1,
+
+                supabase: null,
+
+                async initSystem() { 
+                    try { this.supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY); } catch(e) {}
+                    await this.fetchBooths();
+                    setInterval(() => this.fetchBooths(), 120000); // 2 MIN REFRESH
+                    this.updateTransform(); this.refreshVisuals();
+                },
+                
+                async fetchBooths() {
+                    this.loading = true;
+                    try {
+                        const { data, error } = await this.supabase.from('bookings_brunei').select('*');
+                        if (!error) {
+                            this.boothData = {};
+                            data.forEach(b => { this.boothData[b.booth_numbers] = b; });
+                            this.refreshVisuals();
+                        }
+                    } catch(e){} finally { this.loading = false; }
+                },
+
+                refreshVisuals() {
+                    const container = this.$refs.floorplanContainer;
+                    if (!container) return;
+                    container.querySelectorAll('.booth').forEach(el => {
+                        const bNum = el.getAttribute('data-booth-number');
+                        if (!bNum) return;
+                        
+                        el.onmouseenter = (e) => this.showTooltip(e, bNum);
+                        el.onmouseleave = () => this.tooltip.visible = false;
+                        el.onclick = () => this.toggleSelection(bNum);
+                        
+                        el.classList.remove('sold', 'selected', 'price-5950', 'price-5100', 'price-3400', 'price-2890', 'searched'); // Updated to remove 'searched'
+                        
+                        if (this.selectedBooths.includes(bNum)) { el.classList.add('selected'); return; }
+                        
+                        const info = this.boothData[bNum];
+                        const status = info ? info.status : 'AVAILABLE';
+                        if (status !== 'AVAILABLE') el.classList.add('sold');
+                        else {
+                            const p = this.getPrice(bNum);
+                            if(p==1750||p==5950) el.classList.add('price-5950');
+                            else if(p==1500||p==5100) el.classList.add('price-5100');
+                            else if(p==1000||p==3400) el.classList.add('price-3400');
+                            else if(p==850||p==2890) el.classList.add('price-2890');
+                        }
+                    });
+                },
+
+                toggleSelection(bNum) {
+                    const info = this.boothData[bNum];
+                    if (info && info.status !== 'AVAILABLE') return this.showNotif('Taken', 'Booth unavailable', 'fas fa-lock');
+                    if (this.selectedBooths.includes(bNum)) this.selectedBooths = this.selectedBooths.filter(b => b !== bNum);
+                    else {
+                        if (this.selectedBooths.length >= 2) return this.showNotif('Limit', 'Max 2 booths', 'fas fa-exclamation');
+                        this.selectedBooths.push(bNum);
+                    }
+                    this.refreshVisuals();
+                },
+
+                // UPDATED TOOLTIP LOGIC (HIDE PRICE IF NOT AVAILABLE)
+                showTooltip(e, bNum) {
+                    const info = this.boothData[bNum] || {};
+                    const price = this.getPrice(bNum);
+                    const category = info.category || 'Standard';
+                    const status = info.status || 'AVAILABLE';
+                    
+                    const isAvailable = status === 'AVAILABLE';
+                    let priceHtml = '';
+                    if (isAvailable) {
+                        priceHtml = `<div class="text-xs text-gray-200">Price: BND ${price > 0 ? price.toLocaleString() : '-'}</div>`;
+                    }
+
+                    this.tooltip.content = `
+                        <div class="font-bold text-yellow-300">Booth ${bNum}</div>
+                        <div class="text-[10px] text-gray-300 mb-1 border-b border-gray-600 pb-1">${category}</div>
+                        ${priceHtml}
+                        <div class="text-[10px] font-bold mt-1 uppercase ${isAvailable?'text-green-400':'text-red-400'}">${status}</div>
+                    `;
+                    this.tooltip.x = e.clientX; this.tooltip.y = e.clientY - 10; this.tooltip.visible = true;
+                },
+
+                getPrice(bNum) {
+                    const info = this.boothData[bNum];
+                    if (info) {
+                        if (info.price_bnd) return parseFloat(info.price_bnd);
+                        if (info.g) return parseFloat(info.g);
+                        if (info.h) return parseFloat(info.h);
+                    }
+                    return 0;
+                },
+                
+                get totalPrice() { return this.selectedBooths.reduce((t, b) => t + this.getPrice(b), 0); },
+
+                showNotif(title, msg, icon) {
+                    this.notification = { visible: true, title, message: msg, icon };
+                    setTimeout(() => this.notification.visible = false, 3000);
+                },
+
+                searchBooth() {
+                    let q = this.searchQuery.trim().toUpperCase();
+                    if (!q) return;
+                    
+                    // ROBUST SEARCH LOGIC
+                    let el = document.querySelector(`[data-booth-number="${q}"]`);
+                    if (!el) el = document.getElementById(`booth${q}`);
+                    if (!el) el = document.getElementById(`boothC${q.replace('C','')}`); // Try adding C for C booths
+
+                    if (el) { 
+                        // Clean up prev search
+                        document.querySelectorAll('.searched').forEach(e => e.classList.remove('searched'));
+                        
+                        // Add highlight
+                        el.classList.add('searched'); 
+                        
+                        setTimeout(() => el.classList.remove('searched'), 3000); 
+                    }
+                    else {
+                        this.showNotif('Not Found', 'Booth not found', 'fas fa-search');
+                    }
+                },
+
+                generateSummary() { this.modals.booking = false; this.modals.summary = true; },
+
+                handleBookingAction(type) {
+                    const refId = 'BRN' + Math.floor(100000 + Math.random() * 900000);
+                    const payload = { 
+                        booking_id: refId,
+                        company_name: this.form.companyName,
+                        brand_name: this.form.brandName,
+                        person_in_charge: this.form.personInCharge,
+                        phone_number: this.form.phoneNumber,
+                        email: this.form.email,
+                        social_media: this.form.socialMedia,
+                        selling_items: this.form.sellingItems,
+                        billing_address: this.form.billingAddress,
+                        selected_booths: this.selectedBooths,
+                        total_price: this.totalPrice,
+                        status: 'pending'
+                    };
+
+                    this.supabase.from('profor').insert([payload]).then(({error}) => {
+                        if(error) console.error(error); else console.log('Saved to PROFOR');
+                    });
+
+                    const rate = 3.4;
+                    const totRM = (this.totalPrice * rate).toLocaleString(undefined, {minimumFractionDigits: 2});
+                    const depBND = (this.totalPrice / 2).toLocaleString();
+                    const depRM = ((this.totalPrice / 2) * rate).toLocaleString(undefined, {minimumFractionDigits: 2});
+
+                    let msg = `*ABSOLUT BAZAAR x GAYA RAYA 2026*\nBRIDEX, BRUNEI • 27 FEB - 1 MAR 2026\n\n`;
+                    msg += `ID: ${refId}\nCompany: ${this.form.companyName}\nBrand: ${this.form.brandName}\nPIC: ${this.form.personInCharge}\nPhone: ${this.form.phoneNumber}\n\n`;
+                    msg += `Booths: ${this.selectedBooths.join(', ')}\n`;
+                    msg += `Total: BND ${this.totalPrice.toLocaleString()} | RM ${totRM}\n`;
+                    msg += `Deposit (50%): BND ${depBND} | RM ${depRM}\n(Non-Refundable Deposit)\n\n`;
+                    msg += `Items: ${this.form.sellingItems}\n\nPlease confirm booking. Thank you!`;
+
+                    if (type === 'absolut') window.open(`https://wa.me/60176831247?text=${encodeURIComponent(msg)}`, '_blank');
+                    else if (type === 'brunei') window.open(`https://wa.me/6737131371?text=${encodeURIComponent(msg)}`, '_blank');
+                    else if (type === 'copy') {
+                        navigator.clipboard.writeText(msg);
+                        this.showNotif('Copied', 'Summary copied', 'fas fa-copy');
+                    }
+                    
+                    this.modals.summary = false; this.modals.success = true; this.selectedBooths = []; this.refreshVisuals();
+                },
+
+                // TOUCH & PINCH ZOOM
+                getDistance(touches) { return Math.hypot(touches[0].clientX - touches[1].clientX, touches[0].clientY - touches[1].clientY); },
+                
+                handleTouchStart(e) {
+                    if (e.touches.length === 2) {
+                        this.isDragging = false;
+                        this.initialPinchDist = this.getDistance(e.touches);
+                        this.initialZoom = this.zoomLevel;
+                    } else if (e.touches.length === 1) { this.startDrag(e); }
+                },
+
+                handleTouchMove(e) {
+                    if (e.touches.length === 2) {
+                        e.preventDefault();
+                        const dist = this.getDistance(e.touches);
+                        const scale = dist / this.initialPinchDist;
+                        this.zoomLevel = Math.min(Math.max(this.initialZoom * scale, 0.5), 4);
+                        this.updateTransform();
+                    } else if (e.touches.length === 1 && this.isDragging) {
+                        e.preventDefault();
+                        const x = e.touches[0].clientX; const y = e.touches[0].clientY;
+                        this.panX = x - this.startX; this.panY = y - this.startY;
+                        this.updateTransform();
+                    }
+                },
+
+                handleTouchEnd(e) { this.isDragging = false; if (e.touches.length < 2) this.initialPinchDist = 0; },
+
+                startDrag(e) {
+                    if (e.target.closest('.booth')) return;
+                    this.isDragging = true;
+                    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                    this.startX = clientX - this.panX; this.startY = clientY - this.panY;
+                    if (!e.touches) {
+                        const move = (ev) => { if(!this.isDragging)return; ev.preventDefault(); this.panX=ev.clientX-this.startX; this.panY=ev.clientY-this.startY; this.updateTransform(); };
+                        const end = () => { this.isDragging=false; window.removeEventListener('mousemove',move); window.removeEventListener('mouseup',end); };
+                        window.addEventListener('mousemove',move); window.addEventListener('mouseup',end);
+                    }
+                },
+
+                zoomIn(){ this.zoomLevel=Math.min(this.zoomLevel*1.2, 4); this.updateTransform(); }, 
+                zoomOut(){ this.zoomLevel=Math.max(this.zoomLevel/1.2, 0.5); this.updateTransform(); }, 
+                resetZoom(){ this.zoomLevel=1; this.panX=0; this.panY=0; this.updateTransform(); },
+                
+                updateTransform(){ 
+                    if(this.$refs.floorplanContainer) this.$refs.floorplanContainer.style.transform=`translate(${this.panX}px, ${this.panY}px) scale(${this.zoomLevel})`; 
+                }
+            }));
+        });
+    </script>
+</body>
+</html>
